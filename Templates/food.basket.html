@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Basket</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/basket.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="top-message">Print the food basket quantities and take them to the Food Market or Grocery store for purchases</div>
+        <div class="table-title">Food Basket</div>
+        <div>
+            <button class="btn-icon" onclick="printTable()"><img class="icon" src="{{ url_for('static', filename='icons/printing.png')}}" ></button>
+            <button class="btn-icon" onclick="downloadTable()"><img class="icon" src="{{ url_for('static', filename='icons/copy.png')}}" ></button>
+            <span class="note">
+                TAKE A SCREENSHOT OR PRINT THIS TO SHOW AT THE MARKET
+            </span>
+        </div>
+
+        <table id="printTable">
+            <thead>
+                <tr>
+                    <th>Food Group</th>
+                    <th>Food</th>
+                    <th>Portions(grams)</th>
+                    <th>Portions(kgs)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically populated by JavaScript -->
+            </tbody>
+        </table>
+
+        <span class="page-info" id="span">
+            <span id="pageInfo">Showing 1 to 10 entries of 12</span>
+            
+            <div class="pagination">
+                <button onclick="prevPage()">Previous</button>
+                <span id="pageNumber">Page 1</span>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </span>
+        <div class="page-buttons" id="span">
+            <button class="btn" id="back-btn" type="Button" onclick="done()">
+                <img class="icon" src="{{ url_for('static', filename='icons/check-mark.png')}}">
+                Done
+            </button>
+        </div>
+
+
+    </div>
+    <script src="{{url_for('static',filename='js/basket.js')}}"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+   
+</body>
+</html>

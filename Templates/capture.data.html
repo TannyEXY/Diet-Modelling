@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food List Capture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/btns.css')}}">
+</head>
+<style>
+    .container td {
+        padding: 10px;
+        width: fit-content;
+        min-width: 100px;
+        
+    }
+</style>
+<body>
+    <div class="container" style="width: 70%;">
+    <h1>Capture Food List</h1>
+    <form action="/capture/data/" method="POST" style="padding:10px ">
+
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    {% if category in ["success","error"]%}
+                    <div class="flash-message" style="width:100%; color: green;">
+                        {{ message }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+       
+        <label for="food_type">Food Type:</label>
+        <input type="text" id="food_type" name="food_type" required>
+        <br>
+
+        <label for="food_group">Food Group:</label>
+        <input type="text" id="food_group" name="food_group" required>
+        <br>
+
+        <label for="measure">Measure:</label>
+        <input type="text" id="measure" name="measure" required>
+        <br>
+
+        <label for="serving_adult">Serving (Adult):</label>
+        <input type="number" id="serving_adult" name="serving_adult" step="0.01" required>
+        <br>
+        <label for="serving_child">Serving (Child):</label>
+        <input type="number" id="serving_child" name="serving_child" step="0.01" required>
+        <br>
+        <label for="serving_infant">Serving (Infants):</label>
+        <input type="number" id="serving_infant" name="serving_infant" step="0.01" required>
+        <br>
+        <div class="page-buttons">
+            <button class="btn" id="done-btn" type="Submit">
+                <img class="icon" src="{{ url_for('static', filename='icons/paper-plane.png')}}">
+                Submit
+            </button>
+            <button class="btn" id="back-btn" type="Button" onclick="back()">
+                <img class="icon" src="{{ url_for('static', filename='icons/back.png')}}">
+                Back
+            </button>
+            
+        </div>
+    </form>
+    {% if food %}    
+    <div>
+
+            <h2>Meal Plan Table</h2>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Food Group</th>
+                        <th>Food Type</th>
+                        <th>Measure</th>
+                        <th>Serving (Adult)</th>
+                        <th>Serving (Child)</th>
+                        <th>Serving (Infants)</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for diet in food %}
+                    <!-- Rows will be dynamically populated -->
+                    <tr>
+                        <td>{{ diet.food_group }}</td>
+                        <td>{{ diet.food_type }}</td>
+                        <td>{{ diet.measure }}</td>
+                        <td>{{ diet.serving_adult}}</td>
+                        <td>{{ diet.serving_child}}</td>
+                        <td>{{ diet.serving_infant}}</td>
+                        <td><a class="btn" href="/capture/data/delete/{{ diet.id}}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+
+    {% endif %}
+    <script src="{{ url_for('static', filename='js/capture.js')}}"></script>
+</body>
+</html>

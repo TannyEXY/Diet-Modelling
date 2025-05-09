@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Household Meal Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/btns.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="Menu-title">
+            <h1>Menu Modelling Tool</h1>
+        </div>
+        <form method="post" action="/home">
+            <h2 class="Label"><img class="icon" src="{{ url_for('static',filename= 'icons/group-users.png')}}">Number in Household & Meal Time</h2>
+            <div>
+                Number of Adults (> 15 years): <input type="number" name="adult" placeholder="Number of Adults" required><br>
+                Number of Children (6-15 years): <input type="number" name="child" placeholder="Number of Children" required><br>
+                Number of Infants (6 months - 5 years): <input type="number" name="infant" placeholder="Number of Infants" required><br>
+                <div class="note">
+                    *Note-If in your house hold there is no person who falls under stated age groip put value = 0.
+                </div>
+                <div class="page-buttons">
+                    <button class="btn" id="done-btn" type="Submit">
+                        <img class="icon" src="{{ url_for('static', filename='icons/paper-plane.png')}}">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

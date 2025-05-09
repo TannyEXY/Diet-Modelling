@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/meal.add.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/btns.css') }}">
+</head>
+<body>
+    <div class="container" id = "container">
+        
+        <form method="post" action="/meals/add/new">
+            <div class="add-meal header">
+                <Div>
+                    <img class="icon" src="{{ url_for('static',filename= 'icons/add-meal.png')}}">
+                </div>
+                    <b>Meal Selector</b>
+            </div>
+            <div class ="data">
+                <label for="days">Day:</label>
+                <select id="days" name="day" required>
+                    {% for numb in [1,2,3,4,5,6,7]%}
+                    <option value="{{ numb }}"  name="days">{{ numb }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="meal_time">Meal Time:</label>
+                <select id="meal_time" name="meal_time" required>
+                    <option value="Please Select">Please Select</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                </select>
+                <div class="page-buttons" id="btn">
+                    <button class="btn" id="btn" type="Button" onclick="displayList()">
+                        <img class="icon" src="{{ url_for('static', filename='icons/plus.png')}}">
+                        Add Meals
+                    </button>
+                </div>
+                
+                <div id="nutrients-list" style="display:none;">
+                    
+                    
+                    <div class="food">
+                        {% if session['diet'] %}
+                            {% for food_group, food_type in session['diet'].items()  %}
+                            <div class="Nutrients header">
+                                <Div>
+                                    <img class="icon" src="{{ url_for('static',filename= 'icons/add-meal.png')}}">
+                                </div>
+                                <b>{{food_group}}</b>
+                            </div>
+                            <div class="checkbox-grid">
+                                {% for food in food_type %}
+                                <label><input type="checkbox" name="food" value="{{food}}"> {{food}}</label>
+                                {% endfor %}
+                            </div>                    
+                            {% endfor %}
+                            <div class="page-buttons">
+                                <button class="btn" id="done-btn" type="Submit">
+                                    <img class="icon" src="{{ url_for('static', filename='icons/paper-plane.png')}}">
+                                    Submit
+                                </button>
+                            </div>
+                            
+                        {% endif %}
+
+                </div>
+        </div>
+        </div>
+        </form>
+    </div>
+
+    <script>
+        function displayList(){
+            document.getElementById("nutrients-list").style.display = "block";
+            document.getElementById("btn").style.display = "none";
+
+                let divElement = document.getElementById("container");
+                let currentMargin = parseInt(window.getComputedStyle(divElement).marginTop);
+                divElement.style.marginTop = (currentMargin + 40) + "px"; // Increase by 10px
+            
+        }
+    </script>
+</body>
+</html>

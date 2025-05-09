@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    width: 95%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 30px;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    }
+
+    body::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Opera */
+}
+
+.container {
+    position: absolute;
+    display:block;
+    width: 85%;
+    line-height: 1.6;
+    background-color: whitesmoke;
+    font-weight: bold;
+    padding: 0px 50px 10px 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.main.container a {
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    max-width: fit-content;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+.pictures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+.pictures img {
+    width: 100%;
+    max-height: 300px;
+}

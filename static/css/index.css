@@ -1,0 +1,46 @@
+.container {
+    margin: 10% auto;
+    width: 50%;
+    margin: 50px auto;
+    background-color: whitesmoke;
+    font-weight: bold;
+    padding: 10px;
+    border-top: #000000 5px solid;
+    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #218838;
+}
+
+.page-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}

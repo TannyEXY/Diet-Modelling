@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/meal.plan.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h2>Meal Plan Table</h2>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Meal Time</th>
+                    <th>Food Group</th>
+                    <th>Measure</th>
+                    <th>Total Serving/Adult</th>
+                    <th>Total Serving/Children</th>
+                    <th>Total Serving/Infant</th>
+                    <th>Total Serving/Family</th>
+                    <th>Foods</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically populated -->
+            </tbody>
+        </table>
+        <span class="page-info">
+            <span id="pageInfo">Showing 1 to 10 entries of 12</span>
+            
+            <div class="pagination">
+                <button onclick="prevPage()">Previous</button>
+                <span id="pageNumber">Page 1</span>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </span>
+        <div class="page-buttons">
+            <button class="btn" id="back-btn" type="Button" onclick="back()">
+                <img class="icon" src="{{ url_for('static', filename='icons/back.png')}}">
+                Back
+            </button>
+            <button class="btn" id="done-btn" type="Button" onclick="done()">
+                <img class="icon" src="{{ url_for('static', filename='icons/check-mark.png')}}">
+                Done
+            </button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/meal.plan.js')}}"></script>
+</body>
+</html>

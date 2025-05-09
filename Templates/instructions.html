@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Instructions</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename="css/instructions.css")}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename="css/icons.css")}}">
+        
+    </head>
+    <body>
+        <Div class="main container">
+            <div class="instructions">
+                <p>You can use the healthy eating guide or hand guide to measure the amount of food you need to include per meal. Therefore, keep these portion sizes in mind when choosing a portion of your foods:</p>
+                <ul>
+                    <li><b>Protein</b> - serving size: The inside of your palm. Open the palm of your hand and excluding the fingers, look at the rounded part - that will be the size of your meat portion serving. If you opt for proteins from plant sources, it will be double the size.</li>
+                    <li><b>Carbohydrates or fruits</b> - The size of your closed fist.</li>
+                    <li><b>Vegetables</b> - serving size: as much as you can hold in both hands - Palms up and cupped, open your hands joined together as if someone is going to pour something in your hands. This will be the serving or portion for your vegetables.</li>
+                    <li><b>Fats/oils</b> - serving size: Thumb size. Your thumb would be the portion for nut butters (eg, peanut butter) and the tip of your thumb would be for fats/oils (eg margarine/cooking oil).</li>
+                </ul>
+            </div>
+            <div class="pictures">
+                <div class="image">
+                    <img src="{{ url_for('static', filename='img/left.png')}}">
+                </div>
+                <div class="image">
+                    <img src="{{ url_for('static', filename='img/right.png')}}">
+                </div>
+            </div>
+            <a href="/meals/add"><img class="icon" src="{{ url_for('static', filename='icons/plus.png')}}">Add Meal</a>
+        </Div>
+       
+        
+        <script src="" async defer></script>
+    </body>
+</html>

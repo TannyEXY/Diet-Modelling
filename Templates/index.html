@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/btns.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <img class ="main" src="{{ url_for('static', filename='img/image.png')}}">
+            <div class="btns">
+
+                <div class="page-buttons">
+                    <button class="btn" id="done-btn" type="Button" onclick="openEdit()">
+                        <img class="icon" src="{{ url_for('static', filename='icons/plus.png')}}">
+                        Add More Food Category
+                    </button>
+                    <button class="btn" id="back-btn" type="Button" onclick="openMain()">
+                        <img class="icon" src="{{ url_for('static', filename='icons/plus.png')}}">
+                        Create New Food List
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='js/index.js')}}" async defer></script>
+    </body>
+</html>

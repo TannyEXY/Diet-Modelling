@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-message {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.table-title{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    color: rgb(0, 0, 0);
+}
+
+button {
+    width: 80px;
+    height: 40px;
+    padding: 5px;
+    background-color: white;
+    color: rgb(70, 69, 69);
+    border:#ddd 1px solid;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+    color: white;
+}
+
+.page-info {
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+}
+
+.pagination{
+    margin-left: 50%;
+    text-align: right;
+}
+
+.page-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.icon {
+    margin-right: 2px;
+    width: 20px;
+    height: 20px;
+    color: #4CAF50;
+}
+
+.btn:hover {
+    background-color: #72b275;
+}
+
+.btn-icon {
+    background: #e6e4e4;
+    border:#333 1px solid;
+    border-radius: 2px;
+    width: 40px;
+    height: fit-content;
+}
+
+.note {
+    margin-left: 30px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    color: #ca0303;
+}
+
+
+
+/* Print Styling */
+@media print {
+    body {
+        background: white;
+    }
+    .container {
+        box-shadow: none;
+    }
+    button {
+        display: none;
+    }
+}
